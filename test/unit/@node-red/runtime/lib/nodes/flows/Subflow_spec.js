@@ -690,7 +690,7 @@ describe('Subflow', function() {
                 flow.stop().then(function() {
                     done();
                 });
-            },50);
+            },100);
         });
         it("passes an error event to the subflow's parent tab catch node - targetted scope",function(done) {
             var config = flowUtils.parseConfig([

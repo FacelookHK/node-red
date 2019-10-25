@@ -63,7 +63,8 @@ module.exports = function(grunt) {
             },
             all: { src: ["test/unit/_spec.js","test/unit/**/*_spec.js","test/nodes/**/*_spec.js"] },
             core: { src: ["test/unit/_spec.js","test/unit/**/*_spec.js"]},
-            nodes: { src: ["test/nodes/**/*_spec.js"]}
+            nodes: { src: ["test/nodes/**/*_spec.js"]},
+            trouble: { src:["test/unit/@node-red/runtime/lib/nodes/flows/Subflow_spec.js"]}
         },
         jshint: {
             options: {
@@ -584,7 +585,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default',
         'Builds editor content then runs code style checks and unit tests on all components',
-        ['build','verifyPackageDependencies','jshint:editor','mocha_istanbul:all']);
+        ['build','verifyPackageDependencies','jshint:editor','mocha_istanbul:trouble']);
 
     grunt.registerTask('test-core',
         'Runs code style check and unit tests on core runtime code',
